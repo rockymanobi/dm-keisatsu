@@ -161,7 +161,7 @@ const forKeepDmLight = (options)=>{
       fields : [
         {
           title: `:male-police-officer: DM警察`,
-          value: `そうおっしゃる方も多いのですが、我々としても下記のような考え方に基づいてパトロールを行っておりまして...`,
+          value: `そうおっしゃる方も多いのですが、我々としてもこのような考え方に基づいてパトロールを行っておりまして...ご協力いただけますでしょうか。`,
         },
         {
           value: `${tripleQuart}#本当にDMが最適ですか？\n\n` +
