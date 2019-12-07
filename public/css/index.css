@@ -1,0 +1,156 @@
+
+/* ------ */
+/* Common */
+/* ------ */
+body {
+  min-width: 780px;
+  margin: 0;
+  padding: 0;
+}
+
+.contents-main {
+  padding: 20px 20px;
+  background: #f8f8f8;
+}
+
+.contents-main .section{
+  max-width: 950px;
+  margin: auto;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+
+/* ------ */
+/* Layout */
+/* ------ */
+
+.header{
+  padding: 10px 20px;
+}
+
+.header {
+  border-bottom: solid 1px #eeeeee;
+  background: white;
+}
+.header h1{
+  margin: 0;
+}
+.link-to-top {
+  color: black;
+  text-decoration: none;
+}
+.footer {
+  color: white;
+  font-size: 12px;
+  background: #45BED9;
+  padding: 30px 20px;
+}
+.footer .credit {
+  text-align: right;
+}
+
+/* ------ */
+/* Index  */
+/* ------ */
+.screenshots {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 80px 0px;
+  position: relative;
+  background: #45BED9;
+  overflow: hidden;
+  z-index: 1;
+
+  border-bottom: solid 1px #eeeeee;
+  border-top: solid 1px #eeeeee;
+}
+.screenshots::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: white;
+  transform: translate(-313px, 0px) scale(1,2) rotate(60deg);
+}
+.screenshots img{
+  max-width: 100%;
+  width: 225px;
+  height: auto;
+}
+.catch-text {
+  font-size: 36px;
+  line-height: 1em;
+  margin-bottom: 30px;
+}
+.install-button {
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #FF9700;
+  color: white;
+  margin-bottom: 80px;
+}
+
+.step {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+}
+.step-box {
+  width: 320px;
+  min-height: 400px;
+}
+.step-title {
+  font-size: 14px;
+  color: white;
+}
+.step-title a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background: #45BED9;
+  padding: 10px 15px;;
+  border-radius: 40px;
+}
+.step-visual {
+  display: flex;
+  align-items: center;
+  border: 5px solid gray;
+  width: 150px;
+  height: 150px;
+  border-radius: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+.step-visual img {
+  width: 150px;
+}
+.step .arrow {
+  color: #FF9700;
+  font-size: 48px;
+}
+

@@ -1,0 +1,27 @@
+{
+  "name": "dm-keisatsu",
+  "description": "DM警察です",
+  "website": "https://dm-keisatsu.herokuapp.com/",
+  "repository": "https://github.com/rockymanobi/dm-keisatsu",
+  "logo": "https://user-images.githubusercontent.com/1561249/69445654-17933400-0d96-11ea-8297-a140515d3cfe.png",
+  "success_url": "/",
+  "env": {
+    "SLACK_APP_CLIENT_ID": {
+      "description": "Slack AppのCLIENT_ID"
+    },
+    "SLACK_APP_CLIENT_SECRET": {
+      "description": "Slack AppのCLIENT_SECRET"
+    },
+    "SLACK_APP_VERIFICATION_TOKEN": {
+      "description": "Slack APPのverification token"
+    },
+    "HOST_URL": {
+      "description": "Service Host Url (`https://${app-name}.herokuapp.com`)"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-redis"
+    }
+  ]
+}

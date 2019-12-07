@@ -1,0 +1,15 @@
+
+<div class="contents-main">
+  <p>
+  DM警察のインストールが<strong><%= success ? '成功' : '失敗' %></strong>したよ。
+  </p>
+  <% if( success ){ %>
+  <p>
+  @dm-keisatsu というbotが追加されているのを確認したら、次は <a href='/auth/slackPersonal'>自分のDMのパトロールを依頼</a> しよう。
+  </p>
+  <% } %>
+
+  <% if( !success ){ %>
+    <a href='/auth/add_to_slack'>もう一度インストールを試みる</a>
+  <% } %>
+</div>

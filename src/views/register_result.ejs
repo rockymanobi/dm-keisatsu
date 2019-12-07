@@ -1,0 +1,25 @@
+
+<div class="contents-main">
+  結果 : <%= success ? '成功' : '失敗' %>
+
+  <% if( !success ){ %>
+  <% } %>
+
+
+
+  <p>
+  パトロールの依頼が<strong><%= success ? '成功' : '失敗' %></strong>したよ。
+  </p>
+  <% if( success ){ %>
+  <p>
+  自分が送信したDMも監視対象なので、誰かにDMしてみると試せます（あんまりやると本末転倒だけど）
+  </p>
+  <% } %>
+
+  <% if( !success ){ %>
+   
+    @dm-keisatsuというbotがいるかどうかを調べよう<br>
+    いない場合は<a href='/auth/add_to_slack'>[slackにDM警察をインストール]</a>を試してみよう<br>
+    いる場合は<a href='/auth/register'>もう一度依頼する</a>
+  <% } %>
+</div>
