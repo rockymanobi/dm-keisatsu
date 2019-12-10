@@ -91,10 +91,7 @@ function welcomMessageBody(host, userId){
             value: `DMパトロールをご希望の方は<${host}/auth/register|コチラ>より登録いただけます`,
           },
           {
-            value: `めっちゃ試験運用なので、動きとか監視ポリシーとか含めて全部試験です`,
-          },
-          {
-            value: `マニュアルやサポート周りなどはまだないです。すみません`,
+            value: `使い方は<https://github.com/rockymanobi/dm-keisatsu#%E4%BD%BF%E3%81%84%E6%96%B9|コチラ>をご覧ください`,
           },
           {
             value: `身に覚えのない方はアプリの設定画面からこのアプリを決してください`,
