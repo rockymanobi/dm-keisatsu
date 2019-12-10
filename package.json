@@ -1,8 +1,8 @@
 {
-  "name": "mirror-force",
+  "name": "dm-keisatsu",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node src/index.js",
     "test": "jest"
@@ -22,8 +22,8 @@
       "src/**/*.js"
     ]
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Takanori Koroki <roky@rocky-manobi.com> (https://github.com/rockymanobi/)",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "config": "^3.1.0",
