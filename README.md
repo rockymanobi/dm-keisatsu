@@ -45,6 +45,19 @@ SLACK_APP_VERIFICATION_TOKEN=${slack app の verification token} \n
 npm start
 ```
 
+
+**デフォルトのlocalhost:4000以外で動かしたい場合**
+
+```
+
+HOST_URL=${そのまま。 例 : https://testtest.herokuapp.com } \n
+REDIS_URL=${redisのURL} \n
+SLACK_APP_CLIENT_ID=${slack app の client id} \n
+SLACK_APP_CLIENT_SECRET=${slack app の client secret} \n
+SLACK_APP_VERIFICATION_TOKEN=${slack app の verification token} \n
+npm start
+```
+
 # Contribution
 
 * Super Welcom!
