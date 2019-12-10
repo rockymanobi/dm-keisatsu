@@ -5,6 +5,7 @@
 
 * [公式サイト](https://dm-keisatsu.herokuapp.com) からインストールして使えます
 * 独自環境を構築したい場合は[こちらの記事](https://rocky-dev.kibe.la/shared/entries/4d1c1fd8-c2cb-4399-ab28-42380f812839) を参考にどうぞ。
+* 紹介記事は[こちら](https://blog.rocky-manobi.com/entry/2019/12/09/235739)
 
 # ローカルで動かす
 
