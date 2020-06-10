@@ -25,8 +25,8 @@ async function handleMessage(reqBody) {
   return;
 }
 
-async function reActivatePatrol(reqBody) {
-  return store.deleteReejctedLog( teamId, channelId)
+async function reActivatePatrol(teamId, channelId) {
+  return store.deleteReejctedLog(teamId, channelId)
 }
 
 module.exports = { handleMessage, reActivatePatrol };
