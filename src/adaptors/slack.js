@@ -1,5 +1,6 @@
 
 const request = require("request-promise");
+const config = require('config');
 
 async function sendWebhook(webhookUrl, body){
   const requestOptions = {
@@ -64,11 +65,28 @@ function getChannelInfo(token, channelId){
     .catch((e)=>{ console.log("Fail on getChannelInfo"); console.log(e); return e;})
 }
 
+function getAuthorizationsList(event_context){
+  const requestOptions = {
+    method: 'POST',
+    url: "https://slack.com/api/apps.event.authorizations.list",
+    json: true,
+    headers: {
+      Authorization: `Bearer ${config.slack.appLevelToken}`,
+    },
+    body: {event_context: event_context},
+  };
+
+  return request(requestOptions)
+    .then((e)=>{ return e;})
+    .catch((e)=>{ console.log("Fail on getAuthorizationsList"); console.log(e); return e;})
+}
+
 module.exports = {
   sendWebhook,
   sendMessage,
   getChannelInfo,
   revokeToken,
+  getAuthorizationsList,
 };
 
 // is_mpim

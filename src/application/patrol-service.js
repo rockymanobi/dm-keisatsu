@@ -11,13 +11,16 @@ async function handleMessage(reqBody) {
   const recentEnough = !!latestWarnLog && new Date().getTime() - latestWarnLog.ts < 20000;
 
   setTimeout(()=>{
-    const receiverUserId = patrol.pickReceiverUserId();
-    const token = store.getUserAccessToken( reqBody.team_id, receiverUserId).then((token)=>{
-      const body = (recentEnough)?
-        msg.getMessageBody('ignored',{}) :
-        msg.getMessageBody('hello', { userIds: reqBody.authed_users, tokenHolder: receiverUserId });
-      body.channel = reqBody.event.channel;
-      slack.sendMessage( token, body);
+    const authedUsers = patrol.getAuthedUsers().then((authedUsers)=>{
+      const receiverUserId = patrol.pickReceiverUserId().then((receiverUserId)=>{
+        const token = store.getUserAccessToken( reqBody.team_id, receiverUserId).then((token)=>{
+          const body = (recentEnough)?
+            msg.getMessageBody('ignored',{}) :
+            msg.getMessageBody('hello', { userIds: authedUsers, tokenHolder: receiverUserId });
+          body.channel = reqBody.event.channel;
+          slack.sendMessage( token, body);
+        });
+      });
     });
   },1000);
 
