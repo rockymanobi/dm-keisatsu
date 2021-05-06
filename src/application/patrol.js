@@ -7,17 +7,25 @@ class Patrol {
     this.store = store;
 
     this.sendUserId = params.event.user; // メッセージを送信したユーザ
-    this.authedUsers = params.authed_users; // DM内にいるDM警察パトロール対象のユーザ
+    this.authedUsers_ = null; // DM内にいるDM警察パトロール対象のユーザ
+    this.event_context = params.event_context
     this.channelId = params.event.channel;
     this.teamId = params.team_id;
     this.eventType = params.event.type;
     this.eventSubType = params.event.subtype;
   }
 
+  async getAuthedUsers(){
+    if (this.authedUsers_ !== null) return this.authedUsers_;
+    const auths_list = await slack.getAuthorizationsList(this.event_context);
+    this.authedUsers_ = auths_list.authorizations.map(au => au.user_id);
+    return this.authedUsers_;
+  }
+
   async shouldIgnore(){
     if(this.eventType !== 'message' ){ return true; }
-    if(false && this.authedUsers.includes( this.sendUserId ) ){
-      console.log("自分のメッセージなのでで無視しました");
+    if(false && (await this.getAuthedUsers()).includes( this.sendUserId ) ){
+      console.log("自分のメッセージなので無視しました");
       return true;
     }
     if( this.eventSubType === 'bot_message'){
@@ -56,12 +64,13 @@ class Patrol {
     return false;
   }
 
-  pickReceiverUserId(){
+  async pickReceiverUserId(){
+    const authedUsers = await this.getAuthedUsers();
     // TODO メソッド名と実態が全然違うので変えよう
-    const primaryUserId = this.authedUsers.find( au => au === this.sendUserId);
+    const primaryUserId = authedUsers.find( au => au === this.sendUserId);
     if( primaryUserId ){ return primaryUserId; }
 
-    const userId = this.authedUsers.find( au => au !== this.sendUserId);
+    const userId = authedUsers.find( au => au !== this.sendUserId);
     return (userId)? userId : this.sendUserId; // 上記の場合どのみち失敗するのだが
   }
 }
