@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "config": "^3.1.0",
+    "config": "^3.3.8",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
     "express-ejs-layouts": "^2.5.0",
